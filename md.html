@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+    <title>Meatwo310.github.io</title>
   </head>
   
   <body>
     <p>Loading MarkDown file...</p>
-    <p>Not shown? Try disabling JavaScript in your browser settings.</p>
-    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
-    <script>
-      let converter = new showdown.Converter();
-      let text = '# hello, markdown!';
-      let html = converter.makeHtml(text);
-    </script>
+    <p>Not shown? Try enabling JavaScript in your browser settings.</p>
   </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+  <script>
+    (async () => {
+      let converter = new showdown.Converter();
+      converter.setFlavor('github');
+      
+      // ハッシュの#記号以降の文字列を取得
+      let filename = "md/" + window.location.hash.substring(1);
+      console.log(filename);
+
+      let text = await (await fetch(filename)).text();
+      console.log(text);
+
+      /**
+       * @type {string}
+      */
+      let html = converter.makeHtml(text);
+      console.log(html);
+
+      document.body.innerHTML = html;
+    })();
+  </script>
 </html>
