@@ -1,2 +1,1 @@
-# Meatwo310.github.io
-This is WIP project!
+# Meatwo310.github.io [WIP]
