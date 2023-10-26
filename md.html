@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Meatwo310.github.io</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" /> -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   
   <body>
-    <h1 id="header">
+    <h1 id="header" class="wait_loading">
       <a href="/md.html#welcome.md">
         <p>Meatwo310.github.io</p>
         <p>よこそう私のサイトへ</p>
@@ -38,11 +40,14 @@
       <br>
       <p style="color: darkslategray;">読み込めない場合は、JavaScriptを有効化してください。</p>
     </div>
+
+    <p     id="footer" class="wait_loading">
+      <p>このサイトのソースコード: <a href="https://github.com/Meatwo310/Meatwo310.github.io" target="_blank">GitHub</a></p>
+      このサイトは<a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" target="_blank">Open Font License</a>で公開されている<a
+        href="https://fonts.google.com/specimen/M+PLUS+Rounded+1c/about" target="_blank">M PLUS Rounded 1c</a>を使用しています。
+    </p>
   </body>
   
-  <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" /> -->
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
   <script>
     /**
@@ -68,11 +73,15 @@
         */
         let html = converter.makeHtml(text);
         
-
         document.getElementById("markdown").innerHTML = html;
+
+        const waitLoading = document.getElementsByClassName("wait_loading")
+        for (let i = 0; i < waitLoading.length; i++) {
+          waitLoading.item(i).classList.remove("wait_loading");
+        }
       } catch(e) {
         console.error(e);
-        document.getElementById("markdown").innerHTML = `<p>Markdownファイルの読み込みに失敗しました: <br><span style='font-family: consolas; background-color: #eeeeee;'>${e}</span></p><p><a href='/'>ホームに戻る</a></p>`;
+        document.getElementById("markdown").innerHTML = `<p>Markdownファイルの読み込みに失敗しました: <br><span style='font-family: consolas; background-color: #020202;'>${e}</span></p><p><a href='/'>ホームに戻る</a></p>`;
       }
     }
 
