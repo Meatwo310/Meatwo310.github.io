@@ -59,19 +59,20 @@
         converter.setFlavor('github');
 
         // ハッシュの#記号以降の文字列を取得
-        let filename = "md/" + (window.location.hash.substring(1) || 'welcome.md');
+        const filename = "md/" + (window.location.hash.substring(1) || 'welcome.md');
 
-        let text = await (await fetch(filename)).text();
-        console.log(text);
+        const response = await fetch(filename);
+        const statusCode = response.status;
+        const text = await response.text();
         
-        if (text.match(new RegExp("<pre>Cannot GET .*\.md</pre>"))) {
-          throw new Error("404 Not Found");
+        if (statusCode != 200) {
+          throw new Error(`HTTPステータスコードが200ではありません: ${statusCode}`);
         }
 
         /**
          * @type {string}
         */
-        let html = converter.makeHtml(text);
+        const html = converter.makeHtml(text);
         
         document.getElementById("markdown").innerHTML = html;
 
