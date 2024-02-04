@@ -6,11 +6,9 @@ Discord廃人・依存症・信者。Discordはいいぞ
 ## SNSのアカウント類
 一部のものを載せています
 どれも普段使っていないので反応は遅いです。
-Discordは基本的にフォロバしないですが、他のものに関しては大抵すると思います。
 - [青い鳥](https://twitter.com/Meatwo310)
 - [io](https://misskey.io/@Meatwo310)
 - [エビ](https://mk.shrimpia.network/@Meatwo310)
-- [こめふらすきー](https://m.komefura.com/@Meatwo310)
 
 ## GitHub
 誰にも役立たない絶妙に微妙なものばかり作っています。
