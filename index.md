@@ -1,5 +1,3 @@
-<link rel="icon" type="image/png" href="/favicon.png">
-
 # Meatwo310
 
 Meatwo310 Official Site
