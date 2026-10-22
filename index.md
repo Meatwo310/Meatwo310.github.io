@@ -35,5 +35,7 @@ Meatwo310 Official Site
 - [Modrinth](https://modrinth.com/user/Meatwo310)
 
 
+<!-- not an official site anymore
 ## ✅️ Official Site
 [https://www.meatwo310.com/](https://www.meatwo310.com/)
+-->
